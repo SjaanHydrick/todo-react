@@ -48,7 +48,7 @@ export default class Signup extends Component {
                     <br />
                     {
                         this.state.loading
-                        ? 'Loading..'
+                        ? 'Loading...'
                         : <button>
                             Sign up!
                         </button>
