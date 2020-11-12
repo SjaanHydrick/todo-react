@@ -12,6 +12,8 @@ export default class Signup extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
 
+        try {
+
         this.setState({ loading: true })
         const user = await request
             .post('https://gentle-inlet-53744.herokuapp.com/auth/signup')
@@ -22,6 +24,12 @@ export default class Signup extends Component {
         this.props.changeTokenAndUsername(user.body.username, user.body.email, user.body.token)
 
         this.props.history.push('/todo');
+
+        } catch (e) {
+            alert(e.response.body.error)
+
+            this.setState({ loading: false })
+        }
     }
 
     render() {
