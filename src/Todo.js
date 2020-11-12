@@ -77,33 +77,37 @@ export default class Todo extends Component {
 
         return (
             <div>
-                Welcome to todo!
+                <h3>Welcome to To-Do!</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Add todo:
-                        <input 
+                        <p className="add-todo">Add To-Do: </p>
+                        <input className="todo-input"
                         value={todo}
                         onChange={(e) => this.setState({ todo: e.target.value })}
                         />
                     </label>
+                    <br />
                     <button>
-                        Add todo
+                        Add To-Do
                     </button>
                 </form>
+                <div className="todos-list">
                 {
                     loading
                     ? 'LOADING'
-                    : todos.map(todo => <div key={`${todo.todo}${todo.id}${Math.random()}`} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }
+                    : todos.map(todo => <div className="todos" key={`${todo.todo}${todo.id}${Math.random()}`} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }
                     }>
                     {todo.todo}
+                    <br />
                     {
-                        todo.completed ? '' : <button onClick={() => this.handleCompletedClick(todo.id)}>
+                        todo.completed ? '' : <button className="completed" onClick={() => this.handleCompletedClick(todo.id)}>
                         Completed
                         </button>
                     }
                     </div>)
                 }
-                <button onClick={this.handleClear}>Clear Completes</button>
+                </div>
+                <button className="clear"onClick={this.handleClear}>Clear Completes</button>
             </div>
         )
     }

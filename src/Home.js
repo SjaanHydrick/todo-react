@@ -4,7 +4,9 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                Welcome to the home page!
+                <h1 className="home-text">
+                    To-Do List
+                </h1>
             </div>
         )
     }
