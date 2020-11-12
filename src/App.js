@@ -15,25 +15,30 @@ import PrivateRoute from './PrivateRoute.js';
 export default class App extends Component {
   state = {
     username: localStorage.getItem('USERNAME') || '',
+    email: localStorage.getItem('EMAIL') || '',
     token: localStorage.getItem('TOKEN') || '',
   }
 
-  changeTokenAndUsername = (username, token) => {
+  changeTokenAndUsername = (username, email, token) => {
     localStorage.setItem('TOKEN', token);
+    localStorage.setItem('EMAIL', email);
     localStorage.setItem('USERNAME', username);
 
     this.setState({
       username: username,
+      email: email,
       token: token
     })
   }
 
   logOut = () => {
-    localStorage.setItem('TOKEN', '');
     localStorage.setItem('USERNAME', '');
+    localStorage.setItem('TOKEN', '');
+    localStorage.setItem('EMAIL', '');
 
     this.setState({
       username: '',
+      email: '',
       token: ''
     })
 
