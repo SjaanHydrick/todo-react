@@ -14,8 +14,8 @@ export default class Login extends Component {
 
         this.setState({ loading: true })
         const user = await request
-        .post('https://gentle-inlet-53744.herokuapp.com/auth/signin')
-        .send(this.state);
+            .post('https://gentle-inlet-53744.herokuapp.com/auth/signin')
+            .send(this.state);
 
         this.setState({ loading: false })
 
