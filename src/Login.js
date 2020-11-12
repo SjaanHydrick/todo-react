@@ -3,6 +3,7 @@ import request from 'superagent';
 
 export default class Login extends Component {
     state= {
+        username: '',
         email: '',
         password: '',
         loading: false,
@@ -18,7 +19,7 @@ export default class Login extends Component {
 
         this.setState({ loading: false })
 
-        this.props.changeTokenAndUsername(user.body.email, user.body.token);
+        this.props.changeTokenAndUsername(user.body.username, user.body.email, user.body.token);
 
         this.props.history.push('/todo');
     }
@@ -28,6 +29,11 @@ export default class Login extends Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <h2>Log in</h2>
+                    <label>
+                        Username:
+                        <input onChange={(e) => this.setState({ username: e.target.value })}
+                        value={this.state.username} />
+                    </label>
                     <label>
                         Email:
                         <input

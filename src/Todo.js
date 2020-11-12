@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import request from 'superagent';
+import { deleteCompletes } from './deleteTodo.js'
 
 export default class Todo extends Component {
     state = {
@@ -25,7 +26,7 @@ export default class Todo extends Component {
     }
 
     handleSubmit = async (e) => {
-        const { completed, todo } = this.state;
+        let { completed, todo } = this.state;
         const { token } = this.props;
 
         e.preventDefault();
@@ -43,6 +44,9 @@ export default class Todo extends Component {
         .set('Authorization', token);
 
         await this.fetchTodos();
+
+        await this.setState({ todo: '' });
+
     }
 
     handleCompletedClick = async (someId) => {
@@ -52,6 +56,16 @@ export default class Todo extends Component {
         .put(`https://gentle-inlet-53744.herokuapp.com/api/todo/${someId}`)
         .set('Authorization', token);
 
+        await this.fetchTodos();
+    }
+
+    handleClear = async (e) => {
+        this.state.todos.forEach( (todo) => {
+            if (todo.completed === true) {
+                deleteCompletes(this.props.token, todo.id)
+            }   
+            console.log(todo.id)
+        })
         await this.fetchTodos();
     }
 
@@ -90,6 +104,7 @@ export default class Todo extends Component {
                     }
                     </div>)
                 }
+                <button onClick={this.handleClear}>Clear Completes</button>
             </div>
         )
     }
