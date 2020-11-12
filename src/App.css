@@ -1,38 +1,174 @@
-.App {
+@font-face {
+  font-family: PaperFlowers;
+  src: url('./fonts/Paper\ Flowers.ttf')
+}
+
+@font-face {
+  font-family: Quicksand;
+  src: url('./fonts/Quicksand_Bold.otf')
+}
+
+html {
+  height: 100%;
+  background-image: linear-gradient(white, gainsboro);
+}
+
+body {
   text-align: center;
+  height: 100%;
+  background-image: linear-gradient(white, gainsboro);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.home-text {
+  width: 250px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 75px 0;
+  font-family: PaperFlowers;
+  font-size: 50pt;
+  background-color: turquoise;
+  color: black;
+  box-shadow: 2px 2px 6px gray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.log-in {
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  font-family: Quicksand;
+  font-size: 15pt;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.log-in:hover {
+  color: teal;
 }
 
-.App-link {
-  color: #61dafb;
+.sign-up {
+  text-align: left;
+  margin-left: 30px;
+  font-family: Quicksand;
+  font-size: 15pt;
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.log-out:hover {
+  background-color: lightcoral;
+}
+
+.header {
+  text-align: left;
+  margin-left: 30px;
+}
+
+.username-header {
+  margin-right: 10px;
+  font-family: Quicksand;
+  font-size: 15px;
+}
+
+.sign-up:hover {
+  color: teal;
+}
+
+h2 {
+  width: 150px;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 30px 0;
+  font-family: PaperFlowers;
+  font-size: 50pt;
+  background-color: lemonchiffon;
+  color: black;
+  box-shadow: 2px 2px 6px gray;
+}
+
+h3 {
+  font-family: PaperFlowers;
+  font-size: 50pt;
+}
+
+.username {
+  font-family: Quicksand;
+  font-size: 15pt;
+}
+
+.email {
+  font-family: Quicksand;
+  font-size: 15pt;
+}
+
+.password {
+  font-family: Quicksand;
+  font-size: 15pt;
+}
+
+input {
+  height: 25px;
+  width: 150px;
+  font-family: PaperFlowers;
+  font-size: 30px;
+}
+
+button {
+  margin-top: 30px;
+  height: 30px;
+  width: 100px;
+  font-family: Quicksand;
+  font-size: 12pt;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: lemonchiffon;
+}
+
+.add-todo {
+  font-family: Quicksand;
+  font-size: 15pt;
+}
+
+.todo-input {
+  width: 200px;
+}
+
+.todos-list {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  justify-content: space-evenly;
+}
+
+.todos {
+  margin: 10px;
+  width: 230px;
+  height: 170px;
+  padding: 30px 0;
+  font-family: PaperFlowers;
+  font-size: 30pt;
+  background-color: lightgreen;
+  color: black;
+  box-shadow: 2px 2px 6px gray;
+}
+
+.completed {
+  margin: 10px;
+  font-size: 10pt;
+}
+
+.completed:hover {
+  background-color: lightcoral;
+}
+
+.clear {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+.clear:hover {
+  background-color: lightcoral;
 }

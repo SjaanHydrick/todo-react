@@ -30,22 +30,23 @@ export default class Login extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <h2>Log in</h2>
                     <label>
-                        Username:
+                        <p className="username">Username: </p>
                         <input onChange={(e) => this.setState({ username: e.target.value })}
                         value={this.state.username} />
                     </label>
                     <label>
-                        Email:
+                        <p className="email">Email: </p>
                         <input
                         onChange={(e) => this.setState({ email: e.target.value })}
                         value={this.state.email} />
                     </label>
                     <label>
-                        Password:
+                        <p className="password">Password: </p>
                         <input
                         onChange={(e) => this.setState({ password: e.target.value })}
                         value={this.state.password} type="password" />
                     </label>
+                    <br />
                     {
                         this.state.loading
                         ? 'Loading...'

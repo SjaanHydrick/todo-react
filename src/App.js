@@ -51,12 +51,13 @@ export default class App extends Component {
           <ul>
             {
               this.state.token ? <div>
-                {this.state.username}
-                <button onClick={this.logOut}>Log out</button>
+                <div className="header"><span className="username-header">{this.state.username}</span>
+                <button className="log-out" onClick={this.logOut}>Log out</button>
+                </div>
               </div>
               : <>
-              <Link to="/login"><div>log in</div></Link>
-              <Link to="/signup"><div>sign up</div></Link>
+              <Link to="/login" style={{ textDecoration: 'none' }}><div className="log-in">Log In</div></Link>
+              <Link to="/signup" style={{ textDecoration: 'none' }}><div className="sign-up">Sign Up</div></Link>
               </>}
               </ul>
               <Switch>
