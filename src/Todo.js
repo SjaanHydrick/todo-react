@@ -64,7 +64,6 @@ export default class Todo extends Component {
             if (todo.completed === true) {
                 deleteCompletes(this.props.token, todo.id)
             }   
-            console.log(todo.id)
         })
         await this.fetchTodos();
     }
